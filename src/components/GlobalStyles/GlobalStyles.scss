@@ -47,3 +47,15 @@ body {
     src: url('/assets/fonts/TikTokFont-Regular.woff2');
     font-weight: 400;
 }
+
+button,
+input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+a[href] {
+    text-decoration: none;
+    color: var(--text-color);
+}
