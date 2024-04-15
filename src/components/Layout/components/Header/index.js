@@ -8,7 +8,6 @@ import {
     faEllipsisVertical,
     faKeyboard,
     faMagnifyingGlass,
-    faMessage,
     faPlus,
     faSignOut,
     faSpinner,
@@ -24,7 +23,8 @@ import images from '~/assets/images';
 import { useEffect, useState } from 'react';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
-import { MessIcon } from '~/components/Icons';
+import { InboxIcon, MessIcon, SearchIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -147,7 +147,7 @@ function Header() {
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
                         <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            <SearchIcon />
                         </button>
                     </div>
                 </HeadlessTippy>
@@ -159,11 +159,15 @@ function Header() {
                     {currentUser ? (
                         <>
                             <Tippy delay={[0, 100]} offset={[2, 9]} content="Messages" placement="bottom">
-                                <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                <button className={cx('action-btn-mess')}>
+                                    <MessIcon />
                                 </button>
                             </Tippy>
-                            <MessIcon />
+                            <Tippy delay={[0, 100]} offset={[2, 9]} content="Messages" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
+                                </button>
+                            </Tippy>
                         </>
                     ) : (
                         <>
@@ -172,7 +176,7 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuOnchange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/8f075d187bc0e92cc0b32a0b870bf97f~c5_100x100.jpeg?lk3s=a5d48078&x-expires=1713344400&x-signature=JMs3yWTPaVe57i%2FZdFl%2F9UKuths%3D"
                                 alt="user"

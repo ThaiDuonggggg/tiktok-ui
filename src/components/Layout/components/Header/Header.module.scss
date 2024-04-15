@@ -88,6 +88,9 @@
 }
 
 .search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 52px;
     height: 100%;
     cursor: pointer;
@@ -123,11 +126,19 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    margin-left: 24px;
+    margin-left: 16px;
     object-fit: cover;
     cursor: pointer;
 }
 
-.action-btn {
-    padding: 4px 12px;
+.action-btn,
+.action-btn-mess {
+    display: flex;
+    align-items: center;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+.action-btn-mess {
+    margin-left: 16px;
 }
