@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/Services/searchService';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
