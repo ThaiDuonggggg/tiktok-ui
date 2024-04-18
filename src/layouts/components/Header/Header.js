@@ -102,7 +102,7 @@ function Header() {
                 break;
         }
     };
-    const currentUser = false;
+    const currentUser = true;
 
     return (
         <header className={cx('wrapper')}>
